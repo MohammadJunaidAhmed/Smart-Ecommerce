@@ -34,6 +34,9 @@ app.use(`${api}`, orderRoutes);
 app.use(`${api}`, sellerRoutes);
 app.use(`${api}`, cartRoutes);
 app.use(`${api}`, reviewRoutes);
+app.use('/', (req,res)=>{
+    res.send('Welcome to the API');
+})
 
 
 mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
